@@ -4,13 +4,12 @@ export const Chart = () => {
     const { isChart ,setChart} = GlobalContext()
     return(
     <div className="inset-0 fixed bg-black/15 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm ">
-       <p onClick={() => setChart(false)}>X</p>
        <div className="w-[98%] h-auto ml-auto mr-auto  bg-white/15 mt-4 py-2 px-2 rounded-2xl  flex">
-        <div className="w-[27%] h-[620px] border border-blue-700/15 bg-[#171717] rounded-2xl py-3 px-2 ml-auto mr-auto">
+        <div className="w-[27%] h-[650px] border border-blue-700/15 bg-[#171717] rounded-2xl py-3 px-2 ml-auto mr-auto">
           <div className="bg-white/15 rounded-2xl bg-full h-full">
                <div className="h-[200px] border border-blue-600/55 rounded-2xl py-2 px-3 w-full">
                   <div className="py-2 px-2 font-mono font-bold text-xl">
-                     <div className="w-9 h-9 mb-1 rounded-full bg-white">
+                     <div className="w-9 h-9 mb-1 rounded-full bg-white/15">
                        <img src="./assets/erc20.png " className="w-[100%] ml-auto mr-auto mt-auto mb-auto rounded-full h-[100%]" />
                      </div>
                       <p>ABC/WAREA</p>
@@ -21,7 +20,7 @@ export const Chart = () => {
                   </div>
                   <div  className="py-2 px-2 font-light flex text-sm">
                      <p className="mr-2 ml-0">{`0.000655 WAREA`}</p>
-                     <div className="w-4 h-4 mb-3 ml-2mr-2 rounded-full bg-white">
+                     <div className="w-4 h-4 mb-3 ml-2mr-2 rounded-full bg-white/15">
                        <img src="./assets/area.jpeg " className="w-[100%] ml-auto mr-auto mt-auto mb-auto rounded-full h-[100%]" />
                      </div>
                   </div>
@@ -45,13 +44,42 @@ export const Chart = () => {
                      <p>{`${56}%`}</p>
                   </div>
                </div>
+               <div className="h-[130px] flex flex-wrap rounded-2xl py-1 px-3 w-full">
+                  <div className="w-[48%] py-1 px-4 text-center ml-auto bg-white/5 mr-auto h-14 rounded-2xl ">
+                     <p className="text-[14px]">24H Volume</p>
+                     <p>{`${56}%`}</p>
+                  </div>
+                  <div className="w-[48%] py-1 px-4 text-center ml-auto bg-white/5 mr-auto h-14 rounded-2xl ">
+                     <p className="text-[14px]">Liquidity</p>
+                     <p>{`${56}%`}</p>
+                  </div>
+                  <div className="w-[48%] py-1 px-4 text-center ml-auto bg-white/5 mr-auto h-14 rounded-2xl ">
+                     <p className="font-thin text-[14px]">FDV</p>
+                     <p>{`${56}%`}</p>
+                  </div>
+                  <div className="w-[48%] py-1 px-4 text-center ml-auto bg-white/5 mr-auto h-14 rounded-2xl ">
+                     <p className=" font-extralight text-[14px]">Market Cap</p>
+                     <p>{`${56}%`}</p>
+                  </div>
+               </div>
+               <div className="h-[85px] flex flex-wrap rounded-2xl py-1 px-3 w-full">
+                  <div className="w-[45%] border border-blue-700/25 h-auto ml-auto mr-auto text-center">
+                     buy
+                  </div>
+                  <div className="w-[45%] border border-blue-700/25 h-auto ml-auto mr-auto text-center">
+                     sells
+                  </div>
+               </div>
+               <div className="w-full py-4 px-2 flex items-center">
+                  <button onClick={() => setChart(false)} className="ml-auto h-9 w-[140px] bg-[#171717] rounded-xl py-1 px-2 mr-auto ">Close Chart</button>
+               </div>
           </div>
         </div>
         <div className="w-[70%] bg-[#171717] rounded-xl py-3 px-2 ml-auto mr-auto">
-         <div className="w-[98%] ml-auto mr-auto h-[70%]">
+         <div className="w-[99%] ml-auto mr-auto h-[65%]">
             <TradingVew />
          </div>
-         <div className="w-[98%] ml-auto mr-auto h-[30%]">
+         <div className="w-[99%] ml-auto mr-auto h-[35%]">
             Transaction Card
          </div>
         </div>
