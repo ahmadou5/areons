@@ -63,11 +63,13 @@ export const Chart = () => {
                   </div>
                </div>
                <div className="h-[85px] flex flex-wrap rounded-2xl py-1 px-3 w-full">
-                  <div className="w-[45%] border border-blue-700/25 h-auto ml-auto mr-auto text-center">
-                     buy
+                  <div className="w-[45%] py-3.5 rounded-2xl  border border-blue-700/25 h-auto ml-auto mr-auto text-center">
+                     <p className=" font-extralight text-[14px]">24H Buy Order</p>
+                     <p>{`${56}`}</p>
                   </div>
-                  <div className="w-[45%] border border-blue-700/25 h-auto ml-auto mr-auto text-center">
-                     sells
+                  <div className="w-[45%] py-3.5 rounded-2xl border border-blue-700/25 h-auto ml-auto mr-auto text-center">
+                     <p className=" font-extralight text-[14px]">24H Sells Order</p>
+                     <p>{`${56}`}</p>
                   </div>
                </div>
                <div className="w-full py-4 px-2 flex items-center">
@@ -76,11 +78,8 @@ export const Chart = () => {
           </div>
         </div>
         <div className="w-[70%] bg-[#171717] rounded-xl py-3 px-2 ml-auto mr-auto">
-         <div className="w-[99%] ml-auto mr-auto h-[65%]">
+         <div className="w-[99%] ml-auto mr-auto h-[99%]">
             <TradingVew />
-         </div>
-         <div className="w-[99%] ml-auto mr-auto h-[35%]">
-            Transaction Card
          </div>
         </div>
        </div>
