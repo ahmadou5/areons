@@ -82,7 +82,7 @@ export const Chart = () => {
               </div>
               <div className="w-[48%] py-1 px-4 text-center ml-auto bg-white/5 mr-auto h-14 rounded-2xl ">
                 <p className=" font-extralight text-[14px]">Market Cap</p>
-                <p>{`$${marketCap.slice(0,10)}`}</p>
+                <p>{`$${marketCap !== null? marketCap.slice(0,10) : marketCap}`}</p>
               </div>
             </div>
             <div className="h-[85px] mb-4 flex flex-wrap rounded-2xl py-1 px-3 w-full">
