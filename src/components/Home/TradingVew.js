@@ -1,9 +1,10 @@
 // TradingViewWidget.jsx
+import { GlobalContext } from '@/context/context';
 import React, { useEffect, useRef, memo } from 'react';
 
 function TradingViewWidget() {
   const container = useRef();
-
+  const { symbol, dex} = GlobalContext()
   useEffect(
     () => {
       const script = document.createElement("script");

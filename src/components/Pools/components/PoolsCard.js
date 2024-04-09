@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useState, useEffect } from "react";
 
 export const PoolsCard = () => {
-    const { isChart, setChart, setSymbol} = GlobalContext()
+    const { isChart, setChart, setSymbol, setSells, setDex ,setBuys,  setPriceUsdt, setPriceArea, setFiveMChange, setHChange, setSixHChange, setDayChange, setVolume, setLiquidity, setFdv, setMarketCap} = GlobalContext()
     const [pools,setPools] = useState([])
     const [page,setPage] = useState(1)
     const [limit,setLimit] = useState(20)
@@ -46,6 +46,19 @@ export const PoolsCard = () => {
             <div className=" ml-2  w-[5%]  text-center">{index + 1}</div>
             <div onClick={() => {
             setSymbol(item.attributes.name)
+            setBuys(item.attributes.transactions.h24.buys)
+            setSells(item.attributes.transactions.h24.sells)
+            setDex(item.relationships.dex.data.id)
+            setFdv(item.attributes.fdv_usd)
+            setLiquidity(item.attributes.reserve_in_usd)
+            setMarketCap(item.attributes.market_cap_usd)
+            setFiveMChange(item.attributes.price_change_percentage.m5)
+            setHChange(item.attributes.price_change_percentage.h1)
+            setSixHChange(item.attributes.price_change_percentage.h6)
+            setDayChange(item.attributes.price_change_percentage.h24)
+            setPriceArea(item.attributes.base_token_price_native_currency)
+            setPriceUsdt(item.attributes.base_token_price_usd)
+            setVolume(item.attributes.volume_usd.h24)
             setChart(true)
             //setSymbol(item.attributes.name)
         }} className=" ml-2 lg:ml-3 w-[30%] cursor-pointer text-center">{item.attributes.name}</div>

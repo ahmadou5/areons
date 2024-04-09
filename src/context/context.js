@@ -6,6 +6,19 @@ export const areonContext = createContext({});
 export const AreonContextProvider = ({children}) => {
     const [isConnectModal, setIsConnectModal] = useState(false);
     const [symbol, setSymbol] = useState("BTC/USDT");
+    const [priceUsdt, setPriceUsdt] = useState('')
+    const [priceArea, setPriceArea] = useState('')
+    const [fiveMChange,setFiveMChange] = useState('')
+    const [hChange,setHChange] = useState('')
+    const [sixHChange,setSixHChange] = useState('')
+    const [dayChange,setDayChange] = useState('')
+    const [volume,setVolume] = useState(0)
+    const [liquidity,setLiquidity] = useState(0);
+    const [fdv,setFdv] = useState(0)
+    const [marketCap,setMarketCap] = useState(0)
+    const [buys,setBuys] = useState(0)
+    const [sells,setSells] = useState(0)
+    const [dex,setDex] = useState('')
     const [balance, setBalance] = useState(0)
     const [wallet, setWallet] = useState('')
     const [pooler, setPooler] = useState([])
@@ -16,6 +29,32 @@ export const AreonContextProvider = ({children}) => {
        pooler, 
        isChart,
        symbol, 
+       priceUsdt, 
+       priceArea, 
+       fiveMChange,
+       hChange,
+       sixHChange,
+       dayChange,
+       volume,
+       liquidity,
+       fdv,
+       marketCap,
+       buys,
+       sells,
+       dex,
+       setDex,
+       setSells,
+       setBuys,
+       setMarketCap,
+       setFdv,
+       setLiquidity,
+       setVolume,
+       setDayChange,
+       setSixHChange,
+       setHChange,
+       setFiveMChange,
+       setPriceArea,
+       setPriceUsdt,
        setSymbol,
        setChart,
        setPooler,
