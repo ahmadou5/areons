@@ -7,7 +7,7 @@ import { Tokens } from "../Tokens"
 import { Chart } from "../suspense/chart"
 export const HomeView = () => {
     const {isChart} = GlobalContext()
-    
+    const tokenEndpoint = 'https://api.geckoterminal.com/api/v2/networks/eth/tokens/'
     const [isToken, setIsToken] = useState(false)
     const [isPool, setIsPool] = useState(false)
     const [isOver, setIsOver] = useState(true)

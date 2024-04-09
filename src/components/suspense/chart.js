@@ -21,8 +21,8 @@ export const Chart = () => {
   } = GlobalContext();
   return (
     <div className="inset-0 fixed bg-black/15 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm ">
-      <div className="w-[98%] h-auto ml-auto mr-auto  bg-white/15 mt-4 py-2 px-2 rounded-2xl  flex">
-        <div className="w-[27%] h-[650px] border border-blue-700/15 bg-[#171717] rounded-2xl py-3 px-2 ml-auto mr-auto">
+      <div className="w-[98%] h-auto ml-auto mr-auto  bg-white/15 mt-4 py-2 px-2 rounded-2xl lg:flex-row flex-col flex">
+        <div className="lg:w-[27%] w-[99%] h-[650px] border border-blue-700/15 bg-[#171717] rounded-2xl py-3 px-2 ml-auto mr-auto">
           <div className="bg-white/15 rounded-2xl bg-full h-full">
             <div className="h-[200px] border border-blue-600/55 rounded-2xl py-2 px-3 w-full">
               <div className="py-2 px-2 font-mono font-bold text-xl">
@@ -105,7 +105,7 @@ export const Chart = () => {
             </div>
           </div>
         </div>
-        <div className="w-[70%] bg-[#171717] rounded-xl py-3 px-2 ml-auto mr-auto">
+        <div className="lg:w-[70%] w-[99%] bg-[#171717] rounded-xl py-3 px-2 ml-auto mr-auto">
           <div className="w-[99%] ml-auto mr-auto h-[100%]">
             <TradingVew />
           </div>
