@@ -49,7 +49,7 @@ export const HomeView = () => {
     Intl.NumberFormat(language, {notation: "compact"}).format(number) //output - "234K"
     return(
     <div className="mt-32 w-full">
-        <div className="w-[94%] ml-auto mr-auto mt-16 py-2 px-5 bg-red-700">
+        <div className="w-[94%] ml-auto mr-auto mt-16 py-2 px-5 rounded-xl bg-[#171717]/15">
             <div>
                <p className="text-start text-3xl">Explore CryptoCurrency data on Areon Chain</p>
                <p className="text-start text-md">{`The global cryptocurrency market cap on Areon Chain today is $${Intl.NumberFormat(language, {notation: "compact"}).format(areaVol)}, a 3.3% change in the last 24 hours`}</p>
