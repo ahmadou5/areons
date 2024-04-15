@@ -18,7 +18,9 @@ export const Chart = () => {
     buys,
     sells,
     dex,
+    poolAddress
   } = GlobalContext();
+  const language = "en"
   return (
     <div className="inset-0 fixed bg-black/15 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm ">
       <div className="w-[98%] h-auto ml-auto mr-auto  bg-white/15 mt-4 py-2 px-2 rounded-2xl lg:flex-row flex-col flex">
@@ -70,19 +72,19 @@ export const Chart = () => {
             <div className="h-[140px] flex flex-wrap rounded-2xl py-1 px-3 w-full">
               <div className="w-[48%] py-1 px-4 text-center ml-auto bg-white/5 mr-auto h-14 rounded-2xl ">
                 <p className="text-[14px]">24H Volume</p>
-                <p>{`$${volume.slice(0,10)}`}</p>
+                <p>{`$${Intl.NumberFormat(language, {notation: "compact"}).format(volume)}`}</p>
               </div>
               <div className="w-[48%] py-1 px-4 text-center ml-auto bg-white/5 mr-auto h-14 rounded-2xl ">
                 <p className="text-[14px]">Liquidity</p>
-                <p>{`$${liquidity.slice(0,10)}`}</p>
+                <p>{`$${Intl.NumberFormat(language, {notation: "compact"}).format(liquidity)}`}</p>
               </div>
               <div className="w-[48%] py-1 px-4 text-center ml-auto bg-white/5 mr-auto h-14 rounded-2xl ">
                 <p className="font-thin text-[14px]">FDV</p>
-                <p>{`$${fdv.slice(0,12)}`}</p>
+                <p>{`$${Intl.NumberFormat(language, {notation: "compact"}).format(fdv)}`}</p>
               </div>
               <div className="w-[48%] py-1 px-4 text-center ml-auto bg-white/5 mr-auto h-14 rounded-2xl ">
                 <p className=" font-extralight text-[14px]">Market Cap</p>
-                <p>{`$${marketCap !== null? marketCap.slice(0,10) : marketCap}`}</p>
+                <p>{`$${marketCap !== null? Intl.NumberFormat(language, {notation: "compact"}).format(marketCap) : marketCap}`}</p>
               </div>
             </div>
             <div className="h-[85px] mb-4 flex flex-wrap rounded-2xl py-1 px-3 w-full">
@@ -105,9 +107,10 @@ export const Chart = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-[70%] w-[99%] bg-[#171717] rounded-xl py-3 px-2 ml-auto mr-auto">
-          <div className="w-[99%] ml-auto mr-auto h-[100%]">
-            <TradingVew />
+        <div className="lg:w-[70%] w-[99%] bg-[#171717] rounded-xl py-2 px-2 ml-auto mr-auto">
+          <div className="w-[100%] ml-auto mr-auto h-[100%]">
+        
+          <iframe className="border border-blue-800/45 rounded-2xl"  height="100%" width="100%" id="geckoterminal-embed" title="GeckoTerminal Embed" src={`https://www.geckoterminal.com/bsc/pools/${poolAddress}?embed=1&info=0&swaps=0`} frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
           </div>
         </div>
       </div>

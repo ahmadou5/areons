@@ -11,10 +11,10 @@ function TradingViewWidget() {
       script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
       script.type = "text/javascript";
       script.async = true;
-      script.innerHTML = `
+      script.innerHTML = 
         {
           "autosize": true,
-          "symbol": "MEXC:AREAUSDT",
+          "symbol": ``,
           "interval": "180",
           "timezone": "Etc/UTC",
           "theme": "dark",
@@ -24,11 +24,11 @@ function TradingViewWidget() {
           "backgroundColor": "rgba(0, 0, 0, 1)",
           "gridColor": "rgba(152, 152, 152, 0.06)",
           "hide_side_toolbar": false,
-          "allow_symbol_change": false,
+          "allow_symbol_change": true,
           "save_image": false,
           "calendar": false,
           "support_host": "https://www.tradingview.com"
-        }`;
+        };
       container.current.appendChild(script);
     },
     []

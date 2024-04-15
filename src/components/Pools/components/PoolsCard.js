@@ -7,11 +7,13 @@ import axios from 'axios'
 import { useState, useEffect } from "react";
 
 export const PoolsCard = () => {
-    const { isChart, setChart, setSymbol, setSells, setDex ,setBuys,  setPriceUsdt, setPriceArea, setFiveMChange, setHChange, setSixHChange, setDayChange, setVolume, setLiquidity, setFdv, setMarketCap} = GlobalContext()
+    const { isChart, setChart, setSymbol, setPoolAddress, setSells, setDex ,setBuys,  setPriceUsdt, setPriceArea, setFiveMChange, setHChange, setSixHChange, setDayChange, setVolume, setLiquidity, setFdv, setMarketCap} = GlobalContext()
     const [pools,setPools] = useState([])
     const [page,setPage] = useState(1)
     const [limit,setLimit] = useState(20)
     const [total,setTotal] = useState(0)
+    const number = 234234;
+    const language = "en"
     const EndPoint = `https://api.geckoterminal.com/api/v2/networks/bsc/pools`
     
     useEffect(() => {
@@ -38,11 +40,11 @@ export const PoolsCard = () => {
             <div className=" ml-2 w-[30%]  text-center">24hr Price Change</div>
             <div className=" ml-2 w-[30%]  text-center">TVL</div>
             <div className=" ml-2 w-[30%]  text-center">1hr Volume</div>
-            <div className=" ml-2 w-[30%]  text-center">1 day Volume</div>
+            <div className=" ml-2 w-[30%]  text-center">24H Volume</div>
         </div>
         <div className="w-full h-[86%]">
         <Each of={pools} render={(item,index) => (
-        <div  className="w-[100%] text-center  text-sm flex py-3 px-4 border border-blue-600/15 h-12 mb-auto">
+        <div  className="w-[100%] text-center  text-md flex py-3 px-4 border border-blue-600/15 h-12 mb-auto">
             <div className=" ml-2  w-[5%]  text-center">{index + 1}</div>
             <div onClick={() => {
             setSymbol(item.attributes.name)
@@ -59,13 +61,14 @@ export const PoolsCard = () => {
             setPriceArea(item.attributes.base_token_price_native_currency)
             setPriceUsdt(item.attributes.base_token_price_usd)
             setVolume(item.attributes.volume_usd.h24)
+            setPoolAddress(item.attributes.address)
             setChart(true)
             //setSymbol(item.attributes.name)
         }} className=" ml-2 lg:ml-3 w-[30%] cursor-pointer text-center">{item.attributes.name}</div>
             <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`${item.attributes.price_change_percentage.h24}%`}</div>
-            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${item.attributes.reserve_in_usd.slice(0,4)}USD`}</div>
-            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${item.attributes.volume_usd.h1.slice(0,4)}USD`}</div>
-            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${item.attributes.volume_usd.h24.slice(0,4)}USD`}</div>
+            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.reserve_in_usd)} USD`}</div>
+            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.volume_usd.h1)} USD`}</div>
+            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.volume_usd.h24)} USD`}</div>
         </div>
         )} />
         </div>

@@ -7,7 +7,7 @@ import { formatAddress } from "@/config/format";
 //import { Alert } from "@/suspense/Alert";
 export const Navbar2 = () => {
     const [isActive, setisActive] = useState()
-    const { setIsConnectModal, address:userAddress } = GlobalContext()
+    const { setIsConnectModal, address:userAddress, areaPrice } = GlobalContext()
     const Menu = [
       {
         name: 'given'
@@ -17,12 +17,14 @@ export const Navbar2 = () => {
         
     <>
     <nav className="w-full px-2 z-0 mt-3 fixed inset-x-0 top-2 flex justify-center items-center">
-        <div className="w-[100%]  backdrop-blur-lg bg-clip-padding bg-[#171717] border border-blue-600/25 bg-opacity-60 md:w-880 p-4 rounded-lg flex items-center">
+        <div className="w-[98%]  backdrop-blur-lg bg-clip-padding bg-[#171717] border border-blue-600/25 bg-opacity-60 md:w-880 p-4 rounded-lg flex items-center">
           <div className="flex py-0.5 px-2">
             <img src="./assets/areonLogo.png" className=" h-8 mt-0.5 font-medium"/>
             <p className="ml-0.5 text-3xl text-white/55 font-extralight">Terminal</p>
           </div>
-
+          <div className=" bg-red-500">
+            <div className="ml-auto mr-auto">{`Price:  $${areaPrice.slice(0,6)}`}</div>
+          </div>
           <div className="hidden md:flex items-center gap-6 ml-6 flex-1">
             {/** To do Search <div className="bg-[#171717] hidden border ml-auto mr-20  border-blue-600/85 bg-opacity-60 h-[90%] w-[60%] md:w-880 p-4 rounded-lg lg:flex items-center"></div> */}
                 
