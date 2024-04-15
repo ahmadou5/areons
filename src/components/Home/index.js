@@ -52,7 +52,7 @@ export const HomeView = () => {
         <div className="w-[94%] ml-auto mr-auto mt-16 py-2 px-5 rounded-xl bg-[#171717]/15">
             <div>
                <p className="text-start text-3xl">Explore CryptoCurrency data on Areon Chain</p>
-               <p className="text-start text-md">{`The global cryptocurrency market cap on Areon Chain today is $${Intl.NumberFormat(language, {notation: "compact"}).format(areaVol)}, a 3.3% change in the last 24 hours`}</p>
+               <p className="text-start mt-2 text-md">{`The cryptocurrency market cap on Areon Chain today is $${Intl.NumberFormat(language, {notation: "compact"}).format(areaVol)}, a 3.3% change in the last 24 hours`}</p>
             </div>
         </div>
         <div className="w-full py-4 mb-10 mt-10 px-3 flex lg:flex-row flex-col ">
