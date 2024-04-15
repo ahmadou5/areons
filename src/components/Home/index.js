@@ -48,8 +48,14 @@ export const HomeView = () => {
     ]
     Intl.NumberFormat(language, {notation: "compact"}).format(number) //output - "234K"
     return(
-    <div className="mt-20 w-full">
-        <div className="w-full py-4 mb-10 mt-20 px-3 flex lg:flex-row flex-col ">
+    <div className="mt-32 w-full">
+        <div className="w-[94%] ml-auto mr-auto mt-16 py-2 px-5 bg-red-700">
+            <div>
+               <p className="text-start text-3xl">Explore CryptoCurrency data on Areon Chain</p>
+               <p className="text-start text-md">{`The global cryptocurrency market cap on Areon Chain today is $${Intl.NumberFormat(language, {notation: "compact"}).format(areaVol)}, a 3.3% change in the last 24 hours`}</p>
+            </div>
+        </div>
+        <div className="w-full py-4 mb-10 mt-10 px-3 flex lg:flex-row flex-col ">
             <div className="lg:w-[45%] w-[95%] mb-5 py-4 px-3 lg:h-[200px] h-[200px] rounded-xl border bg-[#171717] hover:border-blue-300 border-blue-600/45 ml-auto mr-auto ">
                 <div className="py-4 flex px-8 ">
                     <img src={areaImg} className="w-12 h-12 mr-2 ml-2" />
@@ -70,7 +76,7 @@ export const HomeView = () => {
             </div>
         </div>
 
-        <div className="w-full py-5 px-3 mb-10 flex lg:flex-row flex-col" >
+        <div className="lg:w-[97%] ml-auto mr-auto py-5 px-3 mb-10 flex lg:flex-row flex-col" >
             <div className="lg:w-[32%] w-[97%] lg:mb-0 mb-5 py-2 px-4 h-[250px] rounded-xl border bg-[#171717] border-blue-600/45 ml-auto mr-auto ">
                 <div>
                     <p>🔥 Trending Pools</p>
@@ -99,8 +105,21 @@ export const HomeView = () => {
                   
                 </div>
             </div>
-           
-            <div className="lg:w-[32%] w-[97%] lg:mb-0 mb-5 py-2 px-4 h-[250px] rounded-xl border bg-[#171717] border-blue-600/45 ml-auto mr-auto ">🆕 New Pools</div>
+
+            <div className="lg:w-[32%] w-[97%] lg:mb-0 mb-5 py-2 px-4 h-[250px] rounded-xl border bg-[#171717] border-blue-600/45 ml-auto mr-auto ">
+                <div>
+                    <p>🆕 New Pools</p>
+                    <Each of={trending} render={(item,i) => (
+                        <div  className="w-[100%] text-center mt-0.5  text-md flex py-3 px-4 border border-blue-600/15 h-12 mb-auto">
+                                 <div className=" ml-2  w-[30%]  text-center">{item.name}</div>
+                                 <div className=" ml-2 lg:ml-3 w-[30%] cursor-pointer text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.volume)}`}</div>
+                                 <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`${item.change}%`}</div>
+                                 <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`${Intl.NumberFormat(language, {notation: "compact"}).format(areaVol)}`}</div>      
+                        </div>
+                    )} />
+                  
+                </div>
+            </div>
         </div>
         
         {/** the Line like */}
