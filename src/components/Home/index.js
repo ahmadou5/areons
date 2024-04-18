@@ -71,7 +71,7 @@ export const HomeView = () => {
           <p className="text-start mt-2 text-xl">{`The cryptocurrency market cap on Areon Chain today is $${Intl.NumberFormat(
             language,
             { notation: "compact" }
-          ).format(areaVol)}, a 3.3% change in the last 24 hours`}</p>
+          ).format(areaTvl)}, a 0% change in the last 24 hours`}</p>
         </div>
       </div>
       <div className="w-full  py-4 mb-10 mt-10 px-3 flex lg:flex-row flex-col ">
