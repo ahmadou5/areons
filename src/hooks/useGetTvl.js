@@ -1,23 +1,30 @@
 import { useEffect, useState } from "react"
 import { GlobalContext } from "@/context/context"
 import axios from 'axios'
-export const useGetTokens = () => {
+export const useGetTvl = () => {
     const { pooler, setPooler,  setAreaImg, setAreaPrice,
         setAreaVol,
         setAreaTvl, } = GlobalContext();
     const [pools, setPools] = useState([])
-    const EndPoint = 'https://api.geckoterminal.com/api/v2/networks/areon-network/tokens/0x298b6a733cd34e41ca87b264d968c8ca7b0b9931'
+    const EndPoint = 'https://api.llama.fi/v2/chains'
     useEffect(() => {
+        {/**
+            "gecko_id": "areon-network",
+            "tvl": 26142.258104706554,
+            "tokenSymbol": "AREA",
+            "cmcId": "23262",
+            "name": "Areon Network",
+            "chainId": null
+           */}
         const getPools = async () => {
             try {
                 const response = await axios.get(EndPoint);
-                console.log('res data',response.data)
-                setAreaPrice(response.data.data.attributes.price_usd)
-                //setAreaTvl(response.data.data.attributes.total_reserve_in_usd)
-                setAreaVol(response.data.data.attributes.volume_usd.h24)
-                setAreaImg(response.data.data.attributes.image_url)
+                const AreonS = response.data.find((chain) => chain.name === 'Areon Network');
+                console.log('Tvl',AreonS.tvl)
+                setAreaTvl(AreonS.tvl)
+               
                // setPooler(response.data)
-                console.log('token',response.data)
+                console.log('tvl',response.data)
                 
 
             } catch (error) {

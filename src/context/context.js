@@ -8,9 +8,12 @@ export const AreonContextProvider = ({children}) => {
     const [symbol, setSymbol] = useState("BTC/USDT");
     const [areaVol, setAreaVol] = useState('')
     const [areaImg, setAreaImg] = useState('')
+    const [trendingPools,setTrendingPools] = useState([]);
+    const [newPools,setNewPools] = useState([]);
+    const [tokens,setTokens] = useState([])
     const [areaPrice, setAreaPrice] = useState('')
     const [poolAddress, setPoolAddress] = useState('')
-    const [areaTvl, setAreaTvl] = useState('')
+    const [areaTvl, setAreaTvl] = useState(0)
     const [priceUsdt, setPriceUsdt] = useState('')
     const [priceArea, setPriceArea] = useState('')
     const [fiveMChange,setFiveMChange] = useState('')
@@ -51,7 +54,13 @@ export const AreonContextProvider = ({children}) => {
        areaTvl, 
        areaVol, 
        areaPrice,
-       areaImg, 
+       areaImg,
+       trendingPools,
+       newPools,
+       tokens,
+       setTokens,
+       setNewPools,
+       setTrendingPools,
        setAreaImg, 
        setAreaPrice,
        setAreaVol,

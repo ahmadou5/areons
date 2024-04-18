@@ -66,9 +66,9 @@ export const PoolsCard = () => {
             //setSymbol(item.attributes.name)
         }} className=" ml-2 lg:ml-3 w-[30%] cursor-pointer text-center">{item.attributes.name}</div>
             <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`${item.attributes.price_change_percentage.h24}%`}</div>
-            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.reserve_in_usd)} USD`}</div>
-            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.volume_usd.h1)} USD`}</div>
-            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.volume_usd.h24)} USD`}</div>
+            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.reserve_in_usd)}`}</div>
+            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.volume_usd.h1)}`}</div>
+            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.volume_usd.h24)}`}</div>
         </div>
         )} />
         </div>
