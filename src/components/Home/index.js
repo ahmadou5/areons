@@ -26,8 +26,8 @@ export const HomeView = () => {
 
   // Example usage
   useEffect(() => {
-    const baseUrl = "https://api.geckoterminal.com/api/v2/networks/bsc/trending_pools?page=1";
-    const NewUrl = "https://api.geckoterminal.com/api/v2/networks/bsc/new_pools?page=1";
+    const baseUrl = "https://api.geckoterminal.com/api/v2/networks/areon-network/trending_pools?page=1";
+    const NewUrl = "https://api.geckoterminal.com/api/v2/networks/areon-network/new_pools?page=1";
     const getPools = async () => {
         try {
             const response = await axios.get(baseUrl);
@@ -115,7 +115,7 @@ export const HomeView = () => {
           7
         )}`}</div>
       </div>
-      <div className="mt-20 lg:ml-5 mb-20 ml-auto mr-auto lg:w-[400px] w-[95%] py-3 px-2 flex h-12 bg-clip-padding bg-[#171717] border border-blue-600/25 bg-opacity-60  p-4 rounded-lg items-center ">
+      <div className="mt-20 lg:ml-10 mb-20 ml-auto mr-auto lg:w-[400px] w-[95%] py-3 px-2 flex h-12 bg-clip-padding bg-[#171717] border border-blue-600/25 bg-opacity-60  p-4 rounded-lg items-center ">
         <div
           onClick={() => {
             setIsOver(true);
