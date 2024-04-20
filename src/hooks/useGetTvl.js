@@ -40,7 +40,7 @@ export const useGetTvl = () => {
                 const response = await axios.get(TrxEndpoint);
                 //const AreonS = response.data.find((chain) => chain.name === 'Areon Network');
                 console.log('Trx',response.data)
-                setTransactionsCount(response.data.totalTransactionCount)
+                setTransactionsCount(response.data.result.totalTransactionCount)
                // setAreaTvl(AreonS.tvl)
                
                // setPooler(response.data)
