@@ -35,24 +35,7 @@ export const useGetTvl = () => {
             }
         } 
         getPools()
-        const getTransaction = async () => {
-            try {
-                const response = await axios.get(TrxEndpoint);
-                //const AreonS = response.data.find((chain) => chain.name === 'Areon Network');
-                console.log('Trx',response.data)
-                setTransactionsCount(response.data.result.totalTransactionCount)
-                setBlock(response.data.result.lastBlockNumber)
-               // setAreaTvl(AreonS.tvl)
-               
-               // setPooler(response.data)
-               // console.log('',response.data)
-                
-
-            } catch (error) {
-                console.log(error)
-            }
-        } 
-        getTransaction()
+       
     },[])
    return pools 
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { GlobalContext } from "@/context/context"
 import axios from 'axios'
 export const useGetOnchainData = () => {
-    const { pooler, setPooler,  setAreaImg, setAreaPrice,transactionsCount,setTransactionsCount,block,setBlock,
+    const { pooler, setPooler,  setAreaImg, setAreaPrice,transactionsCount, gasPrice,setGasPrice,setTransactionsCount,block,setBlock,
         setAreaVol,
         setAreaTvl, } = GlobalContext();
     const [pools, setPools] = useState([])
@@ -18,6 +18,7 @@ export const useGetOnchainData = () => {
             console.log('Trx',response.data)
             setTransactionsCount(response.data.result.totalTransactionCount)
             setBlock(response.data.result.lastBlockNumber)
+            setGasPrice(response.data.result.gasPrice)
            // setAreaTvl(AreonS.tvl)
            
            // setPooler(response.data)
@@ -29,7 +30,7 @@ export const useGetOnchainData = () => {
         }
     } 
     useEffect(() => {
-        const intervalId = setInterval(getTransaction(),3000)
+        const intervalId = setInterval(getTransaction(),1000)
         // clear interval 
         return () => clearInterval(intervalId)
     },[])

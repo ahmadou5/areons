@@ -24,6 +24,7 @@ export const AreonContextProvider = ({children}) => {
     const [liquidity,setLiquidity] = useState(0);
     const [fdv,setFdv] = useState(0)
     const [block,setBlock] = useState(0)
+    const [gasPrice,setGasPrice] = useState(0)
     const [transactionsCount,setTransactionsCount] = useState(0)
     const [marketCap,setMarketCap] = useState(0)
     const [buys,setBuys] = useState(0)
@@ -62,6 +63,8 @@ export const AreonContextProvider = ({children}) => {
        tokens,
        transactionsCount,
        block,
+       gasPrice,
+       setGasPrice,
        setBlock,
        setTransactionsCount,
        setTokens,
