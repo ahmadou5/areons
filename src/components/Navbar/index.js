@@ -7,7 +7,7 @@ import { formatAddress } from "@/config/format";
 //import { Alert } from "@/suspense/Alert";
 export const Navbar2 = () => {
     const [isActive, setisActive] = useState()
-    const { setIsConnectModal, address:userAddress, areaPrice } = GlobalContext()
+    const { setIsConnectModal, address:userAddress, areaPrice,transactionsCount,setTransactionsCount } = GlobalContext()
     const Menu = [
       {
         name: 'given'
@@ -25,7 +25,7 @@ export const Navbar2 = () => {
           <div className="lg:flex hidden py-1 px-2 border border-blue-500/15 w-[75%] rounded-md ml-auto mr-2 bg-[#171717]">
             <div className="flex ml-2 mr-auto">
             <img src="./assets/1trx.png" className=" mt-0.5 h-8 w-8 bg-white rounded-full font-medium"/>
-            <p className="ml-1.5 text-xl py-2 text-white/55 font-extralight">{`Transactions: 2M`}</p>
+            <p className="ml-1.5 text-xl py-2 text-white/55 font-extralight">{`Transactions: ${transactionsCount}`}</p>
             </div>
             <div className="flex mr-2 ml-auto">
             <img src="./assets/qqw.png" className=" mt-0.5 h-8 w-8  bg-white rounded-full  font-medium"/>

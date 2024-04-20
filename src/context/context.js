@@ -23,6 +23,7 @@ export const AreonContextProvider = ({children}) => {
     const [volume,setVolume] = useState(0)
     const [liquidity,setLiquidity] = useState(0);
     const [fdv,setFdv] = useState(0)
+    const [transactionsCount,setTransactionsCount] = useState(0)
     const [marketCap,setMarketCap] = useState(0)
     const [buys,setBuys] = useState(0)
     const [sells,setSells] = useState(0)
@@ -58,6 +59,8 @@ export const AreonContextProvider = ({children}) => {
        trendingPools,
        newPools,
        tokens,
+       transactionsCount,
+       setTransactionsCount,
        setTokens,
        setNewPools,
        setTrendingPools,

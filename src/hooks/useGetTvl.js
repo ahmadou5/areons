@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { GlobalContext } from "@/context/context"
 import axios from 'axios'
 export const useGetTvl = () => {
-    const { pooler, setPooler,  setAreaImg, setAreaPrice,
+    const { pooler, setPooler,  setAreaImg, setAreaPrice,transactionsCount,setTransactionsCount,
         setAreaVol,
         setAreaTvl, } = GlobalContext();
     const [pools, setPools] = useState([])
@@ -39,11 +39,12 @@ export const useGetTvl = () => {
             try {
                 const response = await axios.get(TrxEndpoint);
                 //const AreonS = response.data.find((chain) => chain.name === 'Areon Network');
-                console.log('Trx',response)
+                console.log('Trx',response.data)
+                setTransactionsCount(response.data.totalTransactionCount)
                // setAreaTvl(AreonS.tvl)
                
                // setPooler(response.data)
-                console.log('trx',response.data.result)
+               // console.log('',response.data)
                 
 
             } catch (error) {
