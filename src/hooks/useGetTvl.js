@@ -6,7 +6,10 @@ export const useGetTvl = () => {
         setAreaVol,
         setAreaTvl, } = GlobalContext();
     const [pools, setPools] = useState([])
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // CORS Anywhere proxy URL
+    const targetUrl = 'https://mainnet-api.areonscan.com/external/general-stats'; // Target API endpoint
     const EndPoint = 'https://api.llama.fi/v2/chains'
+    const TrxEndpoint = 'https://mainnet-api.areonscan.com/external/general-stats'
     useEffect(() => {
         {/**
             "gecko_id": "areon-network",
@@ -32,6 +35,22 @@ export const useGetTvl = () => {
             }
         } 
         getPools()
+        const getTransaction = async () => {
+            try {
+                const response = await axios.get(TrxEndpoint);
+                //const AreonS = response.data.find((chain) => chain.name === 'Areon Network');
+                console.log('Trx',response)
+               // setAreaTvl(AreonS.tvl)
+               
+               // setPooler(response.data)
+                console.log('trx',response.data.result)
+                
+
+            } catch (error) {
+                console.log(error)
+            }
+        } 
+        getTransaction()
     },[])
    return pools 
 }

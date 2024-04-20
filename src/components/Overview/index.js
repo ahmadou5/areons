@@ -96,10 +96,10 @@ export const Overview = () => {
           <p className="mb-3 py-2 px-3 ml-4 text-xl">Pools</p>
           <PoolsCard />
         </div>
-        <div className="w-auto mt-16 ">
-        <p className="mb-3 py-2 px-3 ml-4 text-xl">Tokens</p>
+        {/**<div className="w-auto mt-16 ">
+         <p className="mb-3 py-2 px-3 ml-4 text-xl">Tokens</p>
           <TokensCard />
-        </div>
+            </div> **/}
     </div>
 )
 }

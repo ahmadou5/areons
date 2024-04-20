@@ -62,13 +62,13 @@ export const HomeView = () => {
     "USDT"
   );
   return (
-    <div className="mt-32 w-full">
-      <div className="w-[96%] ml-auto mr-auto mt-16 py-2 px-5 rounded-xl ">
+    <div className="mt-32 ml-auto mr-auto w-full">
+      <div className="w-[95%] ml-auto mr-auto mt-16 py-2 px-5 rounded-xl ">
         <div>
-          <p className="text-start text-5xl">
+          <p className="text-start lg:text-5xl text-3xl">
             Explore CryptoCurrency data on Areon Chain
           </p>
-          <p className="text-start mt-2 text-xl">{`The cryptocurrency market cap on Areon Chain today is $${Intl.NumberFormat(
+          <p className="text-start mt-2 text-sm lg:text-xl">{`The cryptocurrency market cap on Areon Chain today is $${Intl.NumberFormat(
             language,
             { notation: "compact" }
           ).format(areaTvl)}, a 0% change in the last 24 hours`}</p>
@@ -89,9 +89,9 @@ export const HomeView = () => {
         <div className="lg:w-[45%] w-[95%] py-3 px-2 lg:h-[200px] h-[200px] rounded-xl border bg-[#171717]  hover:border-blue-300 border-blue-600/45 ml-auto mr-auto ">
           <div className="py-4 px-8 flex ">
             <img src="./assets/tren.png" className="w-16 h-12 mr-2 ml-2" />
-            <p className="text-3xl mt-2 mb-0">Volume 24hrs</p>
+            <p className="text-3xl mt-2 mb-0">Vol 24hrs</p>
           </div>
-          <div className="py-0.5 flex px-9">
+          <div className="py-1.5 flex px-9">
             <p className="text-6xl">{`$${Intl.NumberFormat(language, {
               notation: "compact",
             }).format(areaVol)}`}</p>
