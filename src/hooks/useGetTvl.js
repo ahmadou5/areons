@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { GlobalContext } from "@/context/context"
 import axios from 'axios'
 export const useGetTvl = () => {
-    const { pooler, setPooler,  setAreaImg, setAreaPrice,transactionsCount,setTransactionsCount,
+    const { pooler, setPooler,  setAreaImg, setAreaPrice,transactionsCount,setTransactionsCount,block,setBlock,
         setAreaVol,
         setAreaTvl, } = GlobalContext();
     const [pools, setPools] = useState([])
@@ -41,6 +41,7 @@ export const useGetTvl = () => {
                 //const AreonS = response.data.find((chain) => chain.name === 'Areon Network');
                 console.log('Trx',response.data)
                 setTransactionsCount(response.data.result.totalTransactionCount)
+                setBlock(response.data.result.lastBlockNumber)
                // setAreaTvl(AreonS.tvl)
                
                // setPooler(response.data)
