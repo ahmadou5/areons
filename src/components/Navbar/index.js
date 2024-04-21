@@ -25,22 +25,22 @@ export const Navbar2 = () => {
             <img src="./assets/areonLogo.png" className=" h-8 mt-0.5 font-medium"/>
             <p className="ml-0.5 text-3xl text-white/55 font-extralight">-info</p>
           </div>
-          <div className="lg:flex hidden py-1 px-2 border border-blue-500/15 w-[75%] rounded-md ml-auto mr-2 bg-[#171717]">
+          <div className="lg:flex hidden py-1 px-2 border border-blue-500/15 w-[75%] rounded-md ml-auto mr-2 bg-white/25">
             <div className="flex ml-2 mr-auto">
-            <img src="./assets/1trx.png" className=" mt-1.5 h-8 w-auto bg-[#171717] rounded-full font-medium"/>
-            <p className="ml-1.5 text-xl py-2 text-white/55 font-extralight">{`Transactions: ${transactionsCount}`}</p>
+            <img src="./assets/1trx.png" className=" mt-1.5 h-8 w-auto  rounded-full font-medium"/>
+            <p className="ml-0.5 text-xl py-2 text-white/55 font-extralight">{`Transactions: ${transactionsCount}`}</p>
             </div>
             <div className="flex ml-2 mr-auto">
-            <img src="./assets/cube.png" className=" mt-1.5 h-8 w-auto bg-[#171717] rounded-full font-medium"/>
+            <img src="./assets/cube.png" className=" mt-1.5 h-8 w-auto bg-[#171717]/0 rounded-full font-medium"/>
             <p className="ml-0.5 text-xl py-2 text-white/55 font-extralight">{`Latest Block: ${block}`}</p>
             </div>
             <div className="flex ml-2 mr-auto">
-            <img src="./assets/mai.png" className=" mt-2.5 h-6 w-6 rounded-full font-medium bg-[#171717]"/>
-            <p className="ml-1.5 text-xl py-2 text-white/55 font-extralight">{`Gas: ${gasPrice}`}</p>
+            <img src="./assets/mai.png" className=" mt-2.5 h-6 w-6 rounded-full font-medium bg-[#171717]/0"/>
+            <p className="ml-0.5 text-xl py-2 text-white/55 font-extralight">{`Gas: ${gasPrice}`}</p>
             </div>
             <div className="flex mr-2 ml-auto">
-            <img src="./assets/qqw.png" className=" mt-1.5 h-8 w-auto  bg-[#171717] rounded-full  font-medium"/>
-            <p className="ml-1.5 text-xl text-white/55 py-2 font-extralight">{`Price: ${areaPrice.slice(0,7)}`}</p>
+            <img src="./assets/qqw.png" className=" mt-1.5 h-8 w-auto  bg-[#171717]/0 rounded-full  font-medium"/>
+            <p className="ml-0.5 text-xl text-white/55 py-2 font-extralight">{`Price: ${areaPrice.slice(0,7)}`}</p>
             </div>
           </div>
          
