@@ -36,7 +36,7 @@ export const Navbar2 = () => {
             </div>
             <div className="flex ml-2 mr-auto">
             <img src="./assets/1trx.png" className=" mt-0.5 h-8 w-8 bg-white rounded-full font-medium"/>
-            <p className="ml-1.5 text-xl py-2 text-white/55 font-extralight">{`Gas: ${gasPrice.slice(0,7)}`}</p>
+            <p className="ml-1.5 text-xl py-2 text-white/55 font-extralight">{`Gas: ${gasPrice.slice(0,4)}`}</p>
             </div>
             <div className="flex mr-2 ml-auto">
             <img src="./assets/qqw.png" className=" mt-0.5 h-8 w-8  bg-white rounded-full  font-medium"/>
