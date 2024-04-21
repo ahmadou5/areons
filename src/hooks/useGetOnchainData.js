@@ -30,8 +30,9 @@ export const useGetOnchainData = () => {
         }
     } 
     useEffect(() => {
-        getTransaction()
-        
+        const intervalId = setInterval(getTransaction(),1000)
+        // clear interval 
+        return () => clearInterval(intervalId)
     },[])
    return pools 
 }
