@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { GlobalContext } from "@/context/context";
 import { useState } from "react";
 import { formatAddress } from "@/config/format";
+import { useGetOnchainData } from "@/hooks/useGetOnchainData";
 //import { Alert } from "@/suspense/Alert";
 export const Navbar2 = () => {
+    const trx = useGetOnchainData()
     const [isActive, setisActive] = useState()
     const { setIsConnectModal, address:userAddress, areaPrice,transactionsCount,setTransactionsCount,gasPrice, block } = GlobalContext()
     const Menu = [

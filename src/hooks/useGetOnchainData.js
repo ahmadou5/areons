@@ -15,7 +15,7 @@ export const useGetOnchainData = () => {
         try {
             const response = await axios.get(TrxEndpoint);
             //const AreonS = response.data.find((chain) => chain.name === 'Areon Network');
-            console.log('Trx',response.data)
+            console.log('Trx',response.data.result)
             setTransactionsCount(response.data.result.totalTransactionCount)
             setBlock(response.data.result.lastBlockNumber)
             setGasPrice(response.data.result.gasPrice)
