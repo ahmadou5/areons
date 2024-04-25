@@ -29,7 +29,7 @@ export const ChartView = () => {
       <div className="w-[100%] text-center">
         <p className="lg:text-2xl">{`${symbol} - Pool`}</p>
       </div>
-      <div className="w-[99%] h-auto ml-auto mr-auto  bg-white/0 mt-4 py-2 px-2 rounded-2xl lg:flex-row flex-col flex">
+      <div className="w-[99%] h-auto ml-auto mr-auto  bg-white/0 mt-1 py-2 px-2 rounded-2xl lg:flex-row flex-col flex">
         <div className="lg:w-[27%] w-[99%] h-auto border border-blue-700/15 bg-[#171717] rounded-2xl py-3 px-2 ml-auto mr-auto">
           <div className="bg-white/15 rounded-2xl bg-full h-full">
             <div className="lg:h-[260px] h-[220px] border border-blue-600/55 rounded-2xl py-2 px-3 w-full">
@@ -113,7 +113,7 @@ export const ChartView = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-[70%] w-[99%] lg:h-auto h-[600px] lg:mt-0 mt-5 bg-[#171717] rounded-xl py-2 px-2 ml-auto mr-auto">
+        <div className="lg:w-[70%] w-[99%] lg:h-auto h-[600px] lg:mt-0 mt-3 bg-[#171717] rounded-xl py-2 px-2 ml-auto mr-auto">
           <div className="w-[100%] h-[100%] ml-auto mr-auto ">
         
           <iframe height="100%" width="100%" id="geckoterminal-embed" className="rounded-xl mb-5" title="GeckoTerminal Embed" src={`https://www.geckoterminal.com/areon-network/pools/${poolAddress}?embed=1&info=0&swaps=0`} frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
