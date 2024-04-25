@@ -20,6 +20,7 @@ export const AreonContextProvider = ({children}) => {
     const [hChange,setHChange] = useState('')
     const [sixHChange,setSixHChange] = useState('')
     const [dayChange,setDayChange] = useState('')
+    const [areaDayChange,setAreaDayChange] = useState('')
     const [volume,setVolume] = useState(0)
     const [liquidity,setLiquidity] = useState(0);
     const [fdv,setFdv] = useState(0)
@@ -64,6 +65,8 @@ export const AreonContextProvider = ({children}) => {
        transactionsCount,
        block,
        gasPrice,
+       areaDayChange,
+       setAreaDayChange,
        setGasPrice,
        setBlock,
        setTransactionsCount,

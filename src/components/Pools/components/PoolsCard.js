@@ -1,5 +1,6 @@
 'use client'
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 import { useGetPools } from "@/hooks/useGetPools";
 import { Each } from "@/components/Home/Each";
 import { GlobalContext } from "@/context/context";
@@ -13,8 +14,10 @@ export const PoolsCard = () => {
     const [limit,setLimit] = useState(20)
     const [total,setTotal] = useState(0)
     const number = 234234;
+    const router = useRouter()
+    const op = useGetPools()
     const language = "en"
-    const EndPoint = `https://api.geckoterminal.com/api/v2/networks/areon-network/pools`
+    const EndPoint = `https://api.geckoterminal.com/api/v2/networks/areon-network/pools/`
     
     useEffect(() => {
         
@@ -31,7 +34,7 @@ export const PoolsCard = () => {
         } 
         getPools()
     },[])
-    console.log(pools,'poolsss' )
+    console.log(op,'poolsss' )
     return(
     <div className="w-[97%]  bg-clip-padding bg-[#171717] border border-blue-600/25 bg-opacity-60 md:w-880 items-center rounded-3xl ml-auto mr-auto h-auto">
         <div className="w-[100%] flex lg:text-md text-sm text-center py-3 px-4 h-10 mb-auto rounded-t-3xl bg-white/5">
@@ -62,11 +65,11 @@ export const PoolsCard = () => {
             setPriceUsdt(item.attributes.base_token_price_usd)
             setVolume(item.attributes.volume_usd.h24)
             setPoolAddress(item.attributes.address)
-            setChart(true)
+            router.push('/chart')
             //setSymbol(item.attributes.name)
         }} className=" ml-2 lg:ml-3 w-[30%] cursor-pointer text-center">{item.attributes.name}</div>
             <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`${item.attributes.price_change_percentage.h24}%`}</div>
-            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.reserve_in_usd)}`}</div>
+            <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.reserve_in_usd )}`}</div>
             <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.volume_usd.h1)}`}</div>
             <div className=" ml-2 lg:ml-3 w-[30%] text-center">{`$${Intl.NumberFormat(language, {notation: "compact"}).format(item.attributes.volume_usd.h24)}`}</div>
         </div>

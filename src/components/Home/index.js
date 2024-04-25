@@ -10,7 +10,7 @@ import { useGetTokens } from "@/hooks/useGetArea";
 import { Each } from "./Each";
 import { useGetTvl } from "@/hooks/useGetTvl";
 export const HomeView = () => {
-  const { areaTvl, areaVol, areaPrice, trendingPools,setTrendingPools, isChart, setChart, setSymbol, setPoolAddress, setSells, setDex ,setBuys,  setPriceUsdt, setPriceArea, setFiveMChange, setHChange, setSixHChange, setDayChange, setVolume, setLiquidity, setFdv, setMarketCap, setNewPools, newPools,  areaImg } = GlobalContext();
+  const { areaTvl, areaVol, areaPrice,areaDayChange, trendingPools,setTrendingPools, isChart, setChart, setSymbol, setPoolAddress, setSells, setDex ,setBuys,  setPriceUsdt, setPriceArea, setFiveMChange, setHChange, setSixHChange, setDayChange, setVolume, setLiquidity, setFdv, setMarketCap, setNewPools, newPools,  areaImg } = GlobalContext();
   const Token = useGetTokens();
   const Tvl = useGetTvl();
   const tokenEndpoint =
@@ -71,7 +71,7 @@ export const HomeView = () => {
           <p className="text-start mt-2 text-sm lg:text-xl">{`The cryptocurrency market cap on Areon Chain today is $${Intl.NumberFormat(
             language,
             { notation: "compact" }
-          ).format(areaTvl)}, a 0% change in the last 24 hours`}</p>
+          ).format(areaTvl)}, and  ${ areaDayChange }% change in the last 24 hours`}</p>
         </div>
       </div>
       <div className="w-full  py-4 mb-10 mt-10 px-3 flex lg:flex-row flex-col ">

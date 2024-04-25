@@ -3,6 +3,7 @@ import { GlobalContext } from "@/context/context"
 import axios from 'axios'
 export const useGetTokens = () => {
     const { pooler, setPooler,  setAreaImg, setAreaPrice,
+        areaDayChange,setAreaDayChange,
         setAreaVol,
         setAreaTvl, } = GlobalContext();
     const [pools, setPools] = useState([])
@@ -10,9 +11,9 @@ export const useGetTokens = () => {
     const getPools = async () => {
         try {
             const response = await axios.get(EndPoint);
-            console.log('res data',response.data)
+            console.log('res data token',response.data)
             setAreaPrice(response.data.data.attributes.price_usd)
-            //setAreaTvl(response.data.data.attributes.total_reserve_in_usd)
+            //setAreaDayChange(response.data.data.attributes.price_change_percentage.h24)
             setAreaVol(response.data.data.attributes.volume_usd.h24)
             setAreaImg(response.data.data.attributes.image_url)
            // setPooler(response.data)
