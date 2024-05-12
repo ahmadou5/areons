@@ -105,7 +105,7 @@ export const HomeView = () => {
         <div className="ml-auto mr-auto">{`Volume 24H:  $${Intl.NumberFormat(
           language,
           { notation: "compact" }
-        ).format(areaVol)}`}</div>
+        ).format(areaVolume)}`}</div>
         <div className="ml-auto mr-auto">{`Tvl:  $${Intl.NumberFormat(
           language,
           { notation: "compact" }
