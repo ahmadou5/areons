@@ -11,7 +11,8 @@ export const AreonContextProvider = ({children}) => {
     const [trendingPools,setTrendingPools] = useState([]);
     const [newPools,setNewPools] = useState([]);
     const [tokens,setTokens] = useState([])
-    const [areaPrice, setAreaPrice] = useState('')
+    const [areaPrice, setAreaPrice] = useState('0')
+    const [areaVolume, setAreaVolume] = useState('0')
     const [poolAddress, setPoolAddress] = useState('')
     const [areaTvl, setAreaTvl] = useState(0)
     const [priceUsdt, setPriceUsdt] = useState('')
@@ -66,6 +67,8 @@ export const AreonContextProvider = ({children}) => {
        block,
        gasPrice,
        areaDayChange,
+       areaVolume,
+       setAreaVolume,
        setAreaDayChange,
        setGasPrice,
        setBlock,

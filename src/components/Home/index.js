@@ -10,7 +10,7 @@ import { useGetTokens } from "@/hooks/useGetArea";
 import { Each } from "./Each";
 import { useGetTvl } from "@/hooks/useGetTvl";
 export const HomeView = () => {
-  const { areaTvl, areaVol, areaPrice,areaDayChange, trendingPools,setTrendingPools, isChart, setChart, setSymbol, setPoolAddress, setSells, setDex ,setBuys,  setPriceUsdt, setPriceArea, setFiveMChange, setHChange, setSixHChange, setDayChange, setVolume, setLiquidity, setFdv, setMarketCap, setNewPools, newPools,  areaImg } = GlobalContext();
+  const { areaTvl, areaVol, areaPrice,areaDayChange, areaVolume, setAreaVolume, trendingPools,setTrendingPools, isChart, setChart, setSymbol, setPoolAddress, setSells, setDex ,setBuys,  setPriceUsdt, setPriceArea, setFiveMChange, setHChange, setSixHChange, setDayChange, setVolume, setLiquidity, setFdv, setMarketCap, setNewPools, newPools,  areaImg } = GlobalContext();
   const Token = useGetTokens();
   const Tvl = useGetTvl();
   const tokenEndpoint =
@@ -94,7 +94,7 @@ export const HomeView = () => {
           <div className="py-1.5 flex px-9">
             <p className="text-6xl">{`$${Intl.NumberFormat(language, {
               notation: "compact",
-            }).format(areaVol)}`}</p>
+            }).format(areaVolume)}`}</p>
           </div>
         </div>
       </div>
@@ -110,7 +110,7 @@ export const HomeView = () => {
           language,
           { notation: "compact" }
         ).format(areaTvl)}`}</div>
-        <div className="ml-auto mr-auto">{`Price:  $${areaPrice.slice(
+        <div className="ml-auto mr-auto">{`Price:  $${areaPrice?.slice(
           0,
           7
         )}`}</div>
