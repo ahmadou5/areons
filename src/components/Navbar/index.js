@@ -40,7 +40,7 @@ export const Navbar2 = () => {
             </div>
             <div className="flex mr-2 ml-auto">
             <img src="./assets/qqw.png" className=" mt-1.5 h-8 w-auto  bg-[#171717]/0 rounded-full  font-medium"/>
-            <p className="ml-0.5 text-xl text-white/55 py-2 font-extralight">{`Price: ${areaPrice.slice(0,7)}`}</p>
+            <p className="ml-0.5 text-xl text-white/55 py-2 font-extralight">{`Price: ${areaPrice?.slice(0,7)}`}</p>
             </div>
           </div>
          
